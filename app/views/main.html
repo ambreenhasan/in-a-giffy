@@ -1,0 +1,21 @@
+<div class="container" ng-controller="MainCtrl">
+  <form role="form" ng-submit="searchGif()">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="gif" placeholder="orange is the new black, GoT">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-info" value="Search">
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="results">
+    <div class="row">
+      <div class="col-md-5 grid-item" ng-repeat="gif in searchQuery">
+        <img class="img-responsive center-block" ng-src="{{ gif.images.fixed_height.url }}" alt="gif"/>
+      </div>
+    </div>
+  </div>
+</div>

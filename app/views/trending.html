@@ -1,0 +1,9 @@
+<div class="container" ng-controller="TrendingCtrl">
+  <h2 class='text-center'>Top 20 Trending GIFs</h2>
+
+  <div class="row">
+    <div class="col-md-5 grid-item" ng-repeat="gif in trendingGifs">
+      <img class="img-responsive center-block" ng-src="{{ gif.images.fixed_height.url }}" alt="gif"/>
+    </div>
+  </div>
+</div>
