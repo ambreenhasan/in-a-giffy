@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -41,7 +42,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a ng-href="#/trending">Trending</a></li>
               <li><a ng-href="#/favorited">Favorited</a></li>
-              <li><a ng-href="#/sign-in">Sign in with Facebook</a></li>
+              <li ng-controller="UserCtrl"><button ng-click="facebookSignIn()">Sign in with Facebook</button></li>
             </ul>
           </div>
         </div>
@@ -79,6 +80,8 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

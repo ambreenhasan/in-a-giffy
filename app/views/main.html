@@ -1,20 +1,32 @@
 <div class="container" ng-controller="MainCtrl">
-  <form role="form" ng-submit="searchGif()">
+  <form role="form" name="searchForm" ng-submit="searchGif()">
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="gif" placeholder="orange is the new black, GoT">
+          <input type="text" class="form-control" name="query" ng-model="query.gif" placeholder="orange is the new black, GoT" required>
           <span class="input-group-btn">
             <input type="submit" class="btn btn-info" value="Search">
           </span>
         </div>
+        <br>
+        <ul class="list-inline">
+        <li ng-show="searchForm.query.$error.required">A search query is required.</li>
+      </ul>
       </div>
     </div>
   </form>
   <div class="results">
     <div class="row">
-      <div class="col-md-5 grid-item" ng-repeat="gif in searchQuery">
+      <div class="col-md-5 grid-item"  ng-repeat="gif in searchQuery">
         <img class="img-responsive center-block" ng-src="{{ gif.images.fixed_height.url }}" alt="gif"/>
+        <div class="text-center buttons" ng-controller="UserCtrl">
+            <div class="btn-group">
+              <button ng-click="favoriteGif(gif)"><i class="fa fa-heart-o fa-3"></i></button>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-default" ng-click="copyGifToClipboard()">Copy URL</button>
+            </div>
+        </div>
       </div>
     </div>
   </div>

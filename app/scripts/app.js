@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -29,10 +30,6 @@ angular
       })
       .when('/favorited', {
         templateUrl: 'views/favorited.html',
-        controller: 'UserCtrl'
-      })
-      .when('/sign-in', {
-        templateUrl: 'views/sign-in.html',
         controller: 'UserCtrl'
       })
       .otherwise({

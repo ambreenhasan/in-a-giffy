@@ -1,8 +1,12 @@
 <div class="container" ng-controller="UserCtrl">
-  <div ng-if="notLoggedIn == true">
-    <p>Log in to see your favorites.</p>
+  <div class="row" ng-model="user">
+    <img class="img-circle" style="float: left; margin-right: 10px;" ng-src="{{user.profile_picture}}">
+    <p class="user-profile">{{ user.firstName }} {{ user.lastName }}</p>
   </div>
-
+  <hr>
   <div class="row">
+    <div class="col-md-5 grid-item"  ng-repeat="favorite in favorites">
+      <img class="img-responsive center-block" ng-src="{{ favorite.gifImage }}" alt="gif"/>
+    </div>
   </div>
 </div>
